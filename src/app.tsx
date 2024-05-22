@@ -1,9 +1,11 @@
-import { ForgotPassord } from "./routes/forgot-password"
-import { Login } from './routes/login'
+import { BrowserRouter } from 'react-router-dom'
+import { Router } from "./routes/route"
 
 export function App() {
   return (
-    <Login />
+    <BrowserRouter>
+      <Router />
+    </BrowserRouter>
   )
 }
 
