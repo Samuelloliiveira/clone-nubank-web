@@ -1,7 +1,7 @@
-import { MdOutlineArrowOutward } from "react-icons/md"
-import { useNavigate } from "react-router-dom"
+import { MdOutlineArrowOutward } from 'react-icons/md'
+import { useNavigate } from 'react-router-dom'
 
-export function ForgotPassord() {
+export function ForgotPassword() {
     const navigate = useNavigate()
 
     return (

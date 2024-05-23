@@ -1,14 +1,14 @@
-import { useEffect, useState } from "react"
-import { z } from "zod"
+import { useEffect, useState } from 'react'
+import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useForm } from "react-hook-form"
-import { formatCPF } from "../utils/cpf-mask-input"
-import { useNavigate } from "react-router-dom"
+import { useForm } from 'react-hook-form'
+import { formatCPF } from '../utils/cpf-mask-input'
+import { useNavigate } from 'react-router-dom'
 
-import { MdOutlineErrorOutline } from "react-icons/md"
-import { IoMdArrowForward } from "react-icons/io"
-import { RiEyeCloseLine } from "react-icons/ri"
-import { VscEye } from "react-icons/vsc"
+import { MdOutlineErrorOutline } from 'react-icons/md'
+import { IoMdArrowForward } from 'react-icons/io'
+import { RiEyeCloseLine } from 'react-icons/ri'
+import { VscEye } from 'react-icons/vsc'
 
 export function FormLogin() {
     const navigate = useNavigate()

@@ -1,12 +1,12 @@
 
-import { Outlet } from "react-router-dom"
+import { Outlet } from 'react-router-dom'
 
 import img from '../assets/nu_core_login.png'
-import { SiNubank } from "react-icons/si"
+import { SiNubank } from 'react-icons/si'
 
 export function Login() {
     return (
-        <main className="h-screen relative">
+        <main className="min-h-screen relative">
             <a href="#" className="ml-6 mt-4 absolute">
                 <SiNubank className="text-[2.75rem] text-secondary-purple dark:text-primary-purple dark:lg:text-white" />
             </a>
