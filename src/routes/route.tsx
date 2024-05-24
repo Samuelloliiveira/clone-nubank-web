@@ -1,19 +1,22 @@
-import { Navigate, Route, Routes } from 'react-router-dom'
+import { createBrowserRouter } from 'react-router-dom'
 
 import { Login } from '../pages/login'
 import { NotFound } from '../pages/not-found'
 import { FormLogin } from '../components/form-login'
 import { ForgotPassword } from '../components/forgot-password'
+import { AccessQRMobile } from "../components/access-qr-mobile"
+import { Home } from "../pages/home"
 
-export function Router() {
-    return (
-        <Routes>
-            <Route path="/" element={<Navigate to="/login" replace />} />
-            <Route path="/login" element={<Login />}>
-                <Route index element={<FormLogin />} />
-                <Route path="esqueci-senha" element={<ForgotPassword />} />
-            </Route>
-            <Route path="*" element={<NotFound />} />
-        </Routes>
-    )
-}
+export const router = createBrowserRouter([
+    {
+        path: '/',
+        element: <Login />,
+        children: [
+            { path: '/', element: <FormLogin /> },
+            { path: '/esqueci-senha', element: <ForgotPassword /> },
+            { path: '/acesso-qr-celular', element: <AccessQRMobile /> },
+        ],
+    },
+    { path: "/home", element: < Home /> },
+    { path: "*", element: < NotFound /> },
+])

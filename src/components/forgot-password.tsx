@@ -1,9 +1,7 @@
 import { MdOutlineArrowOutward } from 'react-icons/md'
-import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export function ForgotPassword() {
-    const navigate = useNavigate()
-
     return (
         <section className="w-full h-screen pt-20 flex flex-col lg:pt-0 lg:w-1/2 lg:overflow-x-hidden lg:overflow-scroll">
             <div className="flex flex-1 items-center justify-center p-6">
@@ -51,9 +49,9 @@ export function ForgotPassword() {
                 </div>
             </div>
             <footer className="w-auto min-h-20 lg:min-h-[8.313rem] bg-background-primary dark:bg-background flex justify-center items-center">
-                <button onClick={() => navigate('/login')} className="min-h-12 flex items-center">
+                <Link to={'/'} className="min-h-12 flex items-center">
                     <span className="font-medium text-secondary-purple dark:text-primary-purple">Lembrei a senha</span>
-                </button>
+                </Link>
             </footer>
         </section>
     )

@@ -3,7 +3,7 @@ import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { formatCPF } from '../utils/cpf-mask-input'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 import { MdOutlineErrorOutline } from 'react-icons/md'
 import { IoMdArrowForward } from 'react-icons/io'
@@ -16,13 +16,13 @@ export function FormLogin() {
     const [showPassword, setShowPassword] = useState(false)
     const [formValid, setFormValid] = useState(false)
 
-    const asyncfunction = async () => {
-        const myPromise = new Promise((resolve) => {
-            setTimeout(() => {
-                resolve('Hello')
-            }, 1000)
-        })
-        return myPromise
+    /*
+        Essa função é ilustrativa, somente para simular uma conexão
+        entre o axios e o backend 
+    */
+    const delayNavigation = async () => {
+        await new Promise((resolve) => setTimeout(resolve, 1000))
+        navigate('/acesso-qr-celular')
     }
 
     const schema = z.object({
@@ -49,7 +49,7 @@ export function FormLogin() {
     async function handleSubmitData(data: any) {
         console.log('submit', data)
 
-        await asyncfunction()
+        await delayNavigation()
 
         reset()
     }
@@ -142,9 +142,9 @@ export function FormLogin() {
             </div>
             <footer className="w-auto min-h-20 lg:min-h-[8.313rem] bg-background-primary dark:bg-background flex justify-center items-center">
                 <div className="w-[26.875rem] h-12 flex items-center justify-between px-6">
-                    <button onClick={() => navigate('/login/esqueci-senha')} className="min-h-12 flex items-center">
+                    <Link to={'esqueci-senha'} className="min-h-12 flex items-center">
                         <span className="font-medium text-secondary-purple dark:text-primary-purple">Esqueci a senha</span>
-                    </button>
+                    </Link>
                     <a href="#" className="min-h-12 flex items-center">
                         <span className="font-medium text-secondary-purple dark:text-primary-purple">Não sou cliente</span>
                     </a>

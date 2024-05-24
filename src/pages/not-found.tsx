@@ -10,7 +10,7 @@ export function NotFound() {
                         <SiNubank className="text-[2.5rem] lg:text-6xl text-secondary-purple" />
                     </a>
                     <a href="#" className="min-w-12 min-h-12 flex items-center cursor-pointer text-secondary-purple dark:text-primary-purple">
-                        <span className="text-primary-purple font-medium">Entrar</span>
+                        <span className="font-medium">Entrar</span>
                     </a>
                 </div>
             </footer>
